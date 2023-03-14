@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Pull requests</h1>
+
+<div id="pull_requests">
+  <% @pull_requests.each do |pull_request| %>
+    <%= render pull_request %>
+    <p>
+      <%= link_to "Show this pull request", pull_request %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New pull request", new_pull_request_path %>

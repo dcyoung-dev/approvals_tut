@@ -1,0 +1,2 @@
+class ChangeRequest < Comment
+end

@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Change requests</h1>
+
+<div id="change_requests">
+  <% @change_requests.each do |change_request| %>
+    <%= render change_request %>
+    <p>
+      <%= link_to "Show this change request", change_request %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New change request", new_change_request_path %>

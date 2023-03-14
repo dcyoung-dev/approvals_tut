@@ -1,0 +1,2 @@
+class Approval < Comment
+end

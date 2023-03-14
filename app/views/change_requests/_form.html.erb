@@ -1,0 +1,32 @@
+<%= form_with(model: change_request) do |form| %>
+  <% if change_request.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(change_request.errors.count, "error") %> prohibited this change_request from being saved:</h2>
+
+      <ul>
+        <% change_request.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :body, style: "display: block" %>
+    <%= form.text_area :body %>
+  </div>
+
+  <div>
+    <%= form.label :pull_request_id, style: "display: block" %>
+    <%= form.text_field :pull_request_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

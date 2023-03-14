@@ -1,0 +1,39 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @pull_request %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-3">
+      <h2>Feedback</h2>
+      <div id="feedbacks">
+        <%= render @pull_request.feedbacks %>
+      </div>
+    </div>
+    <div class="col-3">
+      <h2>Comments</h2>
+      <div id="comments">
+        <%= render @pull_request.comments %>
+      </div>
+    </div>
+    <div class="col-3">
+      <h2>Approvals</h2>
+      <div id="approvals">
+        <%= render @pull_request.approvals %>
+      </div>
+    </div>
+    <div class="col-3">
+      <h2>Change Requests</h2>
+      <div id="change_requests">
+        <%= render @pull_request.change_requests %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div>
+  <%= link_to "Edit this pull request", edit_pull_request_path(@pull_request) %> |
+  <%= link_to "Back to pull requests", pull_requests_path %>
+
+  <%= button_to "Destroy this pull request", @pull_request, method: :delete %>
+</div>
