@@ -23,10 +23,34 @@
 
   <div>
     <%= form.label :pull_request_id, style: "display: block" %>
-    <%= form.text_field :pull_request_id %>
+    <%= form.select :pull_request_id, options_from_collection_for_select(PullRequest.all, :id, :title) %>
+  </div>
+
+  <div data-controller="dialog-input" data-dialog-input-dialog-value="dialog#people">
+    <button type="button" data-action="click->dialog-input#showDialog">
+      Open People Modal
+    </button>
+
+    <input type="text" data-dialog-input-target="input">
   </div>
 
   <div>
     <%= form.submit %>
   </div>
 <% end %>
+
+
+<dialog id="people">
+  <h3>People list</h3>
+
+  <form method="dialog">
+    <button value="kai-1">Kai</button>
+    <button value="hunter-2">Hunter</button>
+    <button value="elliot-3">Elliot</button>
+    <button value="jude-4">Jude</button>
+    <button value="jalen-5">Jalen</button>
+    <button value="asa-6">Asa</button>
+    <button value="evan-7">Evan</button>
+    <button value="aubrey-8">Aubrey</button>
+  </form>
+</dialog>

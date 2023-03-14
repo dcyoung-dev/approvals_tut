@@ -4,5 +4,8 @@
 
 import { application } from "./application"
 
+import DialogInputController from "./dialog_input_controller"
+application.register("dialog-input", DialogInputController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
